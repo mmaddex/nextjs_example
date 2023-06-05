@@ -1,0 +1,15 @@
+# static site cache
+services:
+  - type: web
+    name: cdn-cache
+    env: static
+    buildCommand: npm build
+    staticPublishPath: ./build
+    autoDeploy: true
+# server
+  - type: web
+    name: node-server
+    env: node
+    buildCommand: npm build
+    startCommand: npm start
+    autoDeploy: true
