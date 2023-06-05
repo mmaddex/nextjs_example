@@ -4,7 +4,7 @@ services:
     name: cdn-cache
     env: static
     buildCommand: npm install && npm run build
-    staticPublishPath: ./
+    staticPublishPath: ./next
     autoDeploy: false
     routes:
       - type: rewrite
