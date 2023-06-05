@@ -4,12 +4,12 @@ services:
     name: cdn-cache
     env: static
     buildCommand: npm install && npm run build
-    staticPublishPath: ./next
+    staticPublishPath: ./
     autoDeploy: false
-    routes:
-      - type: rewrite
-        source: /*
-        destination: https://node-server-h4yl.onrender.com/*
+    //routes:
+    //  - type: rewrite
+    //    source: /*
+    //    destination: https://node-server-h4yl.onrender.com/*
     envVars:
       - key: NODE_VERSION
         value: 16.8.0
