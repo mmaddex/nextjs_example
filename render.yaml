@@ -6,16 +6,15 @@ services:
     buildCommand: npm install && npm run build
     staticPublishPath: ./
     autoDeploy: false
-  routes:
-    - type: rewrite
-      source: /*
-      destination: /index.html
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
     envVars:
       - key: NODE_VERSION
         value: 16.8.0
       - key: GITHUB_TOKEN
         sync: false
-      
 # server
   - type: web
     name: node-server
