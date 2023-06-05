@@ -9,6 +9,9 @@ services:
     envVars:
       - key: NODE_VERSION
         value: 16.8.0
+      - key: GITHUB_TOKEN
+        sync: false
+      
 # server
   - type: web
     name: node-server
@@ -19,3 +22,5 @@ services:
     envVars:
       - key: NODE_VERSION
         value: 16.8.0
+      - key: GITHUB_TOKEN
+        sync: false
