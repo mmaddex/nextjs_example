@@ -6,8 +6,3 @@ export function middleware(request) {
   console.log('in the middleware');
   return new NextResponse();
 }
- 
-// See "Matching Paths" below to learn more
-export const config = {
-  matcher: '/*',
-};
