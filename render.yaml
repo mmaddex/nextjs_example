@@ -3,13 +3,19 @@ services:
   - type: web
     name: cdn-cache
     env: static
-    buildCommand: npm install && npm build
+    buildCommand: npm install && npm run build
     staticPublishPath: ./build
     autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 16.8.0
 # server
   - type: web
     name: node-server
     env: node
-    buildCommand: npm install && npm build
+    buildCommand: npm install && npm run build
     startCommand: npm start
     autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 16.8.0
