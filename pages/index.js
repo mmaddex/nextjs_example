@@ -61,6 +61,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ reactions }) {
+  console.log('rendering page');
   return (
     <div className="container">
       <Head>
