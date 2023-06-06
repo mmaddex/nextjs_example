@@ -5,7 +5,7 @@ import { NextRequest } from 'next/server';
 export function middleware(request) {
   console.log('in the middleware');
   console.log(request.url);
-  response = NextResponse.next();
-  response.headers.set('Cache-Control', 'public');
-  return response;
+  //const response = NextResponse.next();
+  //response.headers.set('Cache-Control', 'public');
+  //return response;
 }
