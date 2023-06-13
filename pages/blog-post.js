@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 export async function getStaticProps(context) {
-  console.log('getting static props');
+  console.log('getting static props for BLOG-POST');
   // {
   //   "data": {
   //     "repository": {
@@ -20,8 +20,11 @@ export async function getStaticProps(context) {
   //     }
   //   }
   // }
-  var json
+  var json;
+  var draftTitle;
+  console.log(`draft mode is: ${context.draftMode}`);
   if (context.draftMode) {
+    draftTitle = "DRAFT"
     json = {
        "data": {
          "repository": {
@@ -41,6 +44,7 @@ export async function getStaticProps(context) {
        }
      }
   } else {
+    draftTitle = "PUBLISHED"
     const res = await fetch('https://api.github.com/graphql', {
       method: 'POST',
       headers: {
@@ -76,17 +80,18 @@ export async function getStaticProps(context) {
   return {
     props: {
       reactions,
+      draftTitle
     },
     revalidate: 11,
   };
 }
 
 export default function Home({ reactions }) {
-  console.log('rendering page');
+  console.log('rendering BLOG-POST');
   return (
     <div className="container">
       <Head>
-        <title>Static Reactions Demo</title>
+        <title>DRAFT MODE DEMO</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:title" content="Static Reactions Demo" />
@@ -101,7 +106,7 @@ export default function Home({ reactions }) {
       </Head>
 
       <main>
-        <h2>Static Reactions Demo</h2>
+        <h2>DRAFT MODE DEMO: {draftTitle}</h2>
         <h3>
           Reactions on{' '}
           <a href="https://github.com/vercel/reactions/issues/1">
