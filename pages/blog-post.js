@@ -22,8 +22,8 @@ export async function getStaticProps(context) {
   // }
   var json;
   var draftTitle;
-  console.log(`draft mode is: ${context.draftMode}`);
-  if (context.draftMode) {
+  console.log(`draft mode is: ${!!context.draftMode}`);
+  if (!!context.draftMode) {
     draftTitle = "DRAFT"
     json = {
        "data": {
