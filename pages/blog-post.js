@@ -20,8 +20,9 @@ export async function getStaticProps(context) {
   //     }
   //   }
   // }
+  var json
   if (context.draftMode) {
-    const json = {
+    json = {
        "data": {
          "repository": {
            "issue": {
@@ -60,7 +61,7 @@ export async function getStaticProps(context) {
         }`,
       }),
     });
-    const json = await res.json();
+    json = await res.json();
     if (res.status !== 200) {
       console.error(json);
       throw new Error('Failed to fetch API');
