@@ -86,7 +86,7 @@ export async function getStaticProps(context) {
   };
 }
 
-export default function Home({ reactions }) {
+export default function Home({ reactions, draftTitle }) {
   console.log('rendering BLOG-POST');
   return (
     <div className="container">
