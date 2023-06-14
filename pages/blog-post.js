@@ -210,7 +210,7 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
           `revalidate` specifies the timeout.
         </div>
       
-
+         /*
           <Script
             onLoad={() => {
               outerFunction(renderedAt)
@@ -228,6 +228,7 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
               setInterval(updateTime, 1000)
             }}
           </Script>
+          */
       </main>
     </div>
   );
