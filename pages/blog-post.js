@@ -109,15 +109,6 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
       </Head>
 
       <main>
-        <Script>
-          const updateTime={() => {
-            const date = new Date();
-            const time = date.toLocaleTimeString();
-            const clockElement = document.getElementById('clock');
-            clockElement.textContent = 'Current time: ' + time;
-          }}
-          setInterval(updateTime, 1000);
-        </Script>
         <h2>DRAFT MODE DEMO: {draftTitle}</h2>
         <h3>rendered at {renderedAt}</h3>
 <div id="clock"></div>
@@ -219,6 +210,15 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
           `revalidate` specifies the timeout.
         </div>
       </main>
+      <Script>
+          global updateTime={() => {
+            const date = new Date();
+            const time = date.toLocaleTimeString();
+            const clockElement = document.getElementById('clock');
+            clockElement.textContent = 'Current time: ' + time;
+          }}
+          {setInterval(updateTime, 1000)}
+        </Script>
     </div>
   );
 }
