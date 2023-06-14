@@ -22,11 +22,10 @@ export async function getStaticProps(context) {
   // }
   var json;
   var draftTitle;
-  var renderedAt;
+  const renderedAt = (new Date).toString();;
   console.log(`draft mode is: ${!!context.draftMode}`);
   if (!!context.draftMode) {
     draftTitle = "DRAFT"
-    renderedAt = "2023-06-14T00:10:40.703Z"
     json = {
        "data": {
          "repository": {
@@ -47,7 +46,6 @@ export async function getStaticProps(context) {
      }
   } else {
     draftTitle = "PUBLISHED"
-    renderedAt = new Date;
     const res = await fetch('https://api.github.com/graphql', {
       method: 'POST',
       headers: {
