@@ -86,7 +86,7 @@ export async function getStaticProps(context) {
       draftTitle,
       renderedAt
     },
-    revalidate: 11,
+    revalidate: 30,
   };
 }
 
