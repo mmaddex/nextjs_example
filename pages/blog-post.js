@@ -212,16 +212,16 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
       
 
           <Script>
-            const outerFunction = {() => {
+            const outerFunction = {(renderedAt) => {
               const updateTime = () => {
                 const date = new Date();
                 const time = date.toLocaleTimeString();
                 const clockElement = document.getElementById('clock');
-                const renderedAgo = new Date() - new Date({{renderedAt}})
+                const renderedAgo = new Date() - new Date(renderedAt)
                 clockElement.textContent = 'Current time: ' + renderedAgo;
               }
               setInterval(updateTime, 1000)
-            }}
+            }(renderedAt)}
           </Script>
       </main>
     </div>
