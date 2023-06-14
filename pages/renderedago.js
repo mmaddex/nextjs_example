@@ -5,17 +5,12 @@ import { useState } from 'react'
 export default function RenderedAgo({ renderedAt }) {
  console.log(renderedAt)
   const [renderedAgo, setRenderedAgo] = useState(0)
-  /*const updateTime = () => {
-    const date = new Date();
-    const time = date.toLocaleTimeString();
-    const clockElement = document.getElementById('clock');
-    
-  }*/
   setInterval((() => setRenderedAgo(parseInt((new Date() - new Date(renderedAt))/1000))), 1000)
  
   return (
     <div>
-      <p id="clock">Rendered {renderedAgo} seconds ago</p>
+      <p>Rendered {renderedAgo} seconds ago</p>
+      <p>Rendered {parseInt((new Date() - new Date(renderedAt))/1000)} seconds before the page was loaded</p>
     </div>
   )
 }
