@@ -216,7 +216,8 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
               const date = new Date();
               const time = date.toLocaleTimeString();
               const clockElement = document.getElementById('clock');
-              clockElement.textContent = 'Current time: ' + time;
+              const renderedAgo = new Date() - new Date(renderedAt)
+              clockElement.textContent = 'Current time: ' + renderedAgo;
             }}
             const testing = setInterval(updateTime, 1000)
           </Script>
