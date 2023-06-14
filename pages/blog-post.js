@@ -213,12 +213,12 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
       
         <Helmet>
           <script>
-            const updateTime = () => {
+            const updateTime = {() => {
               const date = new Date();
               const time = date.toLocaleTimeString();
               const clockElement = document.getElementById('clock');
               clockElement.textContent = 'Current time: ' + time;
-            }
+            }}
             setInterval(updateTime, 1000)
           </script>
         </Helmet>
