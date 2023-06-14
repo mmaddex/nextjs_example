@@ -105,23 +105,22 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
           property="og:image"
           content="https://og-image.vercel.app/Incremental%20Static%20Regeneration%20Demo%20using%20**GitHub%20Reactions**.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg"
         />
+        <script>
+          function updateTime() {
+            var date = new Date();
+            var time = date.toLocaleTimeString();
+            var clockElement = document.getElementById('clock');
+            clockElement.textContent = 'Current time: ' + time;
+          }
+
+          setInterval(updateTime, 1000);
+        </script>
       </Head>
 
       <main>
         <h2>DRAFT MODE DEMO: {draftTitle}</h2>
         <h3>rendered at {renderedAt}</h3>
 <div id="clock"></div>
-
-  <script>
-    function updateTime() {
-      const date = new Date();
-      const time = date.toLocaleTimeString();
-      const clockElement = document.getElementById('clock');
-      clockElement.textContent = 'Current time: ' + time;
-    }
-
-    setInterval(updateTime, 1000);
-  </script>
         <h3>
           Reactions on{' '}
           <a href="https://github.com/vercel/reactions/issues/1">
