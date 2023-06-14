@@ -109,7 +109,7 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
       </Head>
 
       <main>
-        <h2>DRAFT MODE DEMO: {draftTitle}</h2>
+        <h2>Get server side props: {draftTitle}</h2>
         <h3>rendered at {renderedAt}</h3>
         <RenderedAgo renderedAt={renderedAt}/>
         <h3>
