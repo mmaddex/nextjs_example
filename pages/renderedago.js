@@ -10,7 +10,7 @@ export default function RenderedAgo(renderedAt) {
     const clockElement = document.getElementById('clock');
     
   }*/
-  setInterval(setRenderedAgo(new Date() - new Date(renderedAt)), 1000)
+  setInterval((() => setRenderedAgo(new Date() - new Date(renderedAt))), 1000)
  
   return (
     <div>
