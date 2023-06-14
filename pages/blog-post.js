@@ -218,7 +218,7 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
               const clockElement = document.getElementById('clock');
               clockElement.textContent = 'Current time: ' + time;
             }}
-            window.setInterval(updateTime, 1000)
+            setInterval(function(){updateTime()}, 1000)
           </Script>
       </main>
     </div>
