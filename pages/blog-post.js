@@ -116,7 +116,6 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
             const clockElement = document.getElementById('clock');
             clockElement.textContent = 'Current time: ' + time;
           }}
-          console.log("RUNNING THIS SCRIPT")
           setInterval(updateTime, 1000);
         </Script>
         <h2>DRAFT MODE DEMO: {draftTitle}</h2>
