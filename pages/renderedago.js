@@ -2,7 +2,8 @@
  
 import { useState } from 'react'
  
-export default function RenderedAgo(renderedAt) {
+export default function RenderedAgo({ renderedAt }) {
+ console.log(renderedAt)
   const [renderedAgo, setRenderedAgo] = useState(0)
   /*const updateTime = () => {
     const date = new Date();
