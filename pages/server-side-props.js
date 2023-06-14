@@ -85,8 +85,7 @@ export async function getServerSideProps(context) {
       reactions,
       draftTitle,
       renderedAt
-    },
-    revalidate: 30,
+    }
   };
 }
 
