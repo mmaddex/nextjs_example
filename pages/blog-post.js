@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script'
 
 export async function getStaticProps(context) {
   console.log('getting static props for BLOG-POST');
@@ -105,7 +106,7 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
           property="og:image"
           content="https://og-image.vercel.app/Incremental%20Static%20Regeneration%20Demo%20using%20**GitHub%20Reactions**.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg"
         />
-        <script>
+        <Script>
           function updateTime() {
             var date = new Date();
             var time = date.toLocaleTimeString();
@@ -114,7 +115,7 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
           }
 
           setInterval(updateTime, 1000);
-        </script>
+        </Script>
       </Head>
 
       <main>
