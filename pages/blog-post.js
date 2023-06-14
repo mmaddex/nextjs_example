@@ -220,8 +220,9 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
                 const renderedAgo = new Date() - new Date(renderedAt)
                 clockElement.textContent = 'Current time: ' + renderedAgo;
               }
+              console.log("setting interval")
               setInterval(updateTime, 1000)
-            }(renderedAt)}
+            }}
           </Script>
       </main>
     </div>
