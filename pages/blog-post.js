@@ -211,13 +211,13 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
         </div>
       </main>
       <Script>
-          global updateTime={() => {
+          const updateTime={() => {
             const date = new Date();
             const time = date.toLocaleTimeString();
             const clockElement = document.getElementById('clock');
             clockElement.textContent = 'Current time: ' + time;
           }}
-          {setInterval(updateTime, 1000)}
+          setInterval(updateTime, 1000)
         </Script>
     </div>
   );
