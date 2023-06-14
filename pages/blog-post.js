@@ -211,7 +211,11 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
         </div>
       
 
-          <Script>
+          <Script
+            onLoad={() => {
+              outerFunction(renderedAt)
+            }}
+          >
             const outerFunction = {(renderedAt) => {
               const updateTime = () => {
                 const date = new Date();
