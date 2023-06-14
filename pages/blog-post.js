@@ -112,7 +112,7 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
       <main>
         <h2>DRAFT MODE DEMO: {draftTitle}</h2>
         <h3>rendered at {renderedAt}</h3>
-        <RenderedAgo {renderedAt}/>
+        <RenderedAgo {...renderedAt}/>
         <h3>
           Reactions on{' '}
           <a href="https://github.com/vercel/reactions/issues/1">
