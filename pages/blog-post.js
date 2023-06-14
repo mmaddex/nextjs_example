@@ -107,12 +107,12 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
           content="https://og-image.vercel.app/Incremental%20Static%20Regeneration%20Demo%20using%20**GitHub%20Reactions**.png?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg"
         />
         <Script>
-          (const updateTime = () => {{
-            date = new Date();
-            time = date.toLocaleTimeString();
-            clockElement = document.getElementById('clock');
+          const updateTime = () => {
+            const date = new Date();
+            const time = date.toLocaleTimeString();
+            const clockElement = document.getElementById('clock');
             clockElement.textContent = 'Current time: ' + time;
-          }})
+          }
 
           setInterval(updateTime, 1000);
         </Script>
