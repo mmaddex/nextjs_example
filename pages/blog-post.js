@@ -22,9 +22,11 @@ export async function getStaticProps(context) {
   // }
   var json;
   var draftTitle;
+  var renderedAt;
   console.log(`draft mode is: ${!!context.draftMode}`);
   if (!!context.draftMode) {
     draftTitle = "DRAFT"
+    renderedAt = "2023-06-14T00:10:40.703Z"
     json = {
        "data": {
          "repository": {
@@ -45,6 +47,7 @@ export async function getStaticProps(context) {
      }
   } else {
     draftTitle = "PUBLISHED"
+    renderedAt = new Date;
     const res = await fetch('https://api.github.com/graphql', {
       method: 'POST',
       headers: {
@@ -86,7 +89,7 @@ export async function getStaticProps(context) {
   };
 }
 
-export default function Home({ reactions, draftTitle }) {
+export default function Home({ reactions, draftTitle, renderedAt }) {
   console.log('rendering BLOG-POST');
   return (
     <div className="container">
@@ -107,6 +110,7 @@ export default function Home({ reactions, draftTitle }) {
 
       <main>
         <h2>DRAFT MODE DEMO: {draftTitle}</h2>
+        <h3>rendered at {renderedAt}</h3>
         <h3>
           Reactions on{' '}
           <a href="https://github.com/vercel/reactions/issues/1">
