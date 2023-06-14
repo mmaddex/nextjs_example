@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import Script from 'next/script'
+import Script from 'next/script';
+import { Helmet } from 'react-helmet';
 
 export async function getStaticProps(context) {
   console.log('getting static props for BLOG-POST');
@@ -210,15 +211,17 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
           `revalidate` specifies the timeout.
         </div>
       </main>
-      <Script>
-          const updateTime={() => {
-            const date = new Date();
-            const time = date.toLocaleTimeString();
-            const clockElement = document.getElementById('clock');
-            clockElement.textContent = 'Current time: ' + time;
-          }}
-          {setInterval(updateTime, 1000)}
-        </Script>
+      <Helmet>
+          <Script>
+            const updateTime={() => {
+              const date = new Date();
+              const time = date.toLocaleTimeString();
+              const clockElement = document.getElementById('clock');
+              clockElement.textContent = 'Current time: ' + time;
+            }}
+            setInterval(updateTime, 1000)
+          </Script>
+        </Helmet>
     </div>
   );
 }
