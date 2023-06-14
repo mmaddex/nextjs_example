@@ -110,6 +110,18 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
       <main>
         <h2>DRAFT MODE DEMO: {draftTitle}</h2>
         <h3>rendered at {renderedAt}</h3>
+<div id="clock"></div>
+
+  <script>
+    function updateTime() {
+      const date = new Date();
+      const time = date.toLocaleTimeString();
+      const clockElement = document.getElementById('clock');
+      clockElement.textContent = 'Current time: ' + time;
+    }
+
+    setInterval(updateTime, 1000);
+  </script>
         <h3>
           Reactions on{' '}
           <a href="https://github.com/vercel/reactions/issues/1">
