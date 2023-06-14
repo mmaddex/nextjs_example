@@ -83,7 +83,8 @@ export async function getStaticProps(context) {
   return {
     props: {
       reactions,
-      draftTitle
+      draftTitle,
+      renderedAt
     },
     revalidate: 11,
   };
