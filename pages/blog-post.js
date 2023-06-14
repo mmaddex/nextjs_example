@@ -112,7 +112,7 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
       <main>
         <h2>DRAFT MODE DEMO: {draftTitle}</h2>
         <h3>rendered at {renderedAt}</h3>
-        <RenderedAgo {...renderedAt}/>
+        <RenderedAgo renderedAt={renderedAt}/>
         <h3>
           Reactions on{' '}
           <a href="https://github.com/vercel/reactions/issues/1">
@@ -210,26 +210,6 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
           - `getStaticProps()` fetches the data during static generation, and
           `revalidate` specifies the timeout.
         </div>
-      
-         /*
-          <Script
-            onLoad={() => {
-              outerFunction(renderedAt)
-            }}
-          >
-            const outerFunction = {(renderedAt) => {
-              const updateTime = () => {
-                const date = new Date();
-                const time = date.toLocaleTimeString();
-                const clockElement = document.getElementById('clock');
-                const renderedAgo = new Date() - new Date(renderedAt)
-                clockElement.textContent = 'Current time: ' + renderedAgo;
-              }
-              console.log("setting interval")
-              setInterval(updateTime, 1000)
-            }}
-          </Script>
-          */
       </main>
     </div>
   );
