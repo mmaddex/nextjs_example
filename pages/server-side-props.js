@@ -80,16 +80,19 @@ export async function getServerSideProps(context) {
     (item) => item.users.totalCount
   );
 
+  const hostTest = context.req.headers.host;
+
   return {
     props: {
       reactions,
       draftTitle,
-      renderedAt
+      renderedAt,
+      hostTest
     }
   };
 }
 
-export default function Home({ reactions, draftTitle, renderedAt }) {
+export default function Home({ reactions, draftTitle, renderedAt, hostTest }) {
   console.log('rendering BLOG-POST');
   return (
     <div className="container">
@@ -109,6 +112,7 @@ export default function Home({ reactions, draftTitle, renderedAt }) {
       </Head>
 
       <main>
+        <h2>HOST: {hostTest}</h2>
         <h2>Get server side props: {draftTitle}</h2>
         <h3>rendered at {renderedAt}</h3>
         <RenderedAgo renderedAt={renderedAt}/>
