@@ -6,7 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "13.4.16",
+    "next": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-helmet": "latest"
