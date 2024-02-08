@@ -1,6 +1,6 @@
 module.exports = {
   experimental: {
     // Defaults to 50MB
-    isrMemoryCacheSize: 0,
+    //isrMemoryCacheSize: 0,
   },
 }
