@@ -1,5 +1,9 @@
 import Head from 'next/head';
 
+export const config = {
+  runtime: 'edge'
+}
+
 export async function getStaticProps() {
   console.log('getting static props');
   // {
