@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 export const config = {
-  runtime: 'edge'
+  runtime: 'experimental-edge'
 }
 
 export async function getStaticProps() {
