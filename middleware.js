@@ -12,5 +12,5 @@ export function middleware(request) {
   //const response = NextResponse.next();
   //response.headers.set('Cache-Control', 'public');
   //return response;
-  return NextResponse.rewrite(new URL('/api/edge_runtime', process.env.RENDER_EXTERNAL_HOSTNAME))
+  return NextResponse.rewrite(new URL('/api/edge_runtime', `http://${process.env.RENDER_EXTERNAL_HOSTNAME}`))
 }
